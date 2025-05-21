@@ -1,0 +1,18 @@
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 140,
+  "htmlWhitespaceSensitivity": "ignore",
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "endOfLine": "auto",
+
+  "plugins": ["prettier-plugin-organize-attributes"],
+  "organizeAttributes": {
+    "vertical": true,
+    "order": "alphabetical"
+  }
+}
