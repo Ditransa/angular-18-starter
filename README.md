@@ -30,3 +30,5 @@ npm run build — Construye el proyecto para producción.
 npm run test — Ejecuta tests unitarios.
 npm run lint — Ejecuta ESLint para revisar el código.
 npm run format — Da formato al código con Prettier.
+
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/Mateoap238/angular-18-starter?utm_source=oss&utm_medium=github&utm_campaign=Mateoap238%2Fangular-18-starter&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
