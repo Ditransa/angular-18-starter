@@ -17,7 +17,7 @@ Plantilla base para proyectos Angular 18 con Standalone Components, arquitectura
 
 ## Cómo usar esta plantilla
 
-npx degit Mateoap238/angular-18-starter nombre-proyecto
+npx degit Ditransa/angular-18-starter nombre-proyecto
 cd nombre-proyecto
 npm install
 npm run start
