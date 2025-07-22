@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LoadingService } from '../../../core/services/LoadingForInterceptor/loading.service';
+import { LoadingService } from '@core/common/services/services/loading.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,13 +8,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './loading.component.html',
-  styleUrl: './loading.component.css',
+  styleUrl: './loading.component.scss',
 })
 export class LoadingComponent implements OnInit, OnDestroy {
   loading = false;
   private loadingSubscription: Subscription = new Subscription();
-
-  constructor(private loadingService: LoadingService) {}
+  private loadingService = inject(LoadingService);
 
   ngOnInit() {
     this.loadingSubscription = this.loadingService.loading$.subscribe(isLoading => {

@@ -1,1 +1,1 @@
-export const TITLE_APP = 'Integrantes';
+export const TITLE_APP = 'Frontend';

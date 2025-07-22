@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -9,15 +9,11 @@ import { Title } from '@angular/platform-browser';
   providers: [Title],
   templateUrl: './not-found.component.html',
 })
-export default class NotFoundComponent {
-  constructor(
-    private title: Title,
-    private router: Router
-  ) {}
+export default class NotFoundComponent implements OnInit {
+  private title = inject(Title);
+  private router = inject(Router);
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.title.setTitle('Página no encontrada');
   }
 

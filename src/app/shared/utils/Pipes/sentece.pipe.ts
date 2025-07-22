@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   standalone: true,
 })
 export class SentecePipe implements PipeTransform {
-  transform(value: string, ...args: unknown[]): string {
+  transform(value: string): string {
     if (typeof value !== 'string') {
       return value;
     }

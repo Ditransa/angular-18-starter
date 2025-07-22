@@ -4,22 +4,23 @@
  * @param {any} standalone:true}
  * @returns {any}
  */
-import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
-
+import { Directive, ElementRef, EventEmitter, HostListener, inject, Output } from '@angular/core';
+// ... existing code ...
 @Directive({
-  selector: '[clickOutside]',
+  selector: '[appClickOutside]',
   standalone: true,
 })
 export class ClickOutsideDirective {
-  @Output() clickOutside = new EventEmitter<void>();
+  // eslint-disable-next-line @angular-eslint/no-output-rename
+  @Output('appClickOutside') appClickOutside = new EventEmitter<void>();
 
-  constructor(private elementRef: ElementRef) {}
+  private elementRef: ElementRef = inject(ElementRef);
 
   @HostListener('document:click', ['$event.target'])
   onClick(targetElement: HTMLElement) {
     const clickedInside = this.elementRef.nativeElement.contains(targetElement);
     if (!clickedInside) {
-      this.clickOutside.emit();
+      this.appClickOutside.emit();
     }
   }
 }

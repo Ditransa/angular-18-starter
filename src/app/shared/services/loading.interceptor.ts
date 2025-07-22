@@ -1,13 +1,13 @@
 import { HttpEvent, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
 import { Observable, finalize } from 'rxjs';
-import { LoadingService } from './../../core/services/LoadingForInterceptor/loading.service';
+import { LoadingService } from '@core/common/services/services/loading.service';
 import { inject } from '@angular/core';
 
 // Usamos HttpInterceptorFn correctamente para Angular 18
 export const loadingInterceptor: HttpInterceptorFn = (
-  req: HttpRequest<any>,
+  req: HttpRequest<unknown>,
   next: HttpHandlerFn // Usa HttpHandlerFn para la función
-): Observable<HttpEvent<any>> => {
+): Observable<HttpEvent<unknown>> => {
   const loadingService = inject(LoadingService); // Usar inyección de dependencias
 
   loadingService.show(); // Activar loading
